@@ -1,10 +1,8 @@
-function main() {
-    let a = 1;
-    function f() {
-        console.log(a)
-    }
-    a = 2;
-    f();
+let a = [1]
+function f(a) {
+    a = [2, 3]
 }
 
-main();
+console.log(a)
+f(a)
+console.log(a)
