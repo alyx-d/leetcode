@@ -1,13 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+func work(done chan string) {
+	time.Sleep(time.Second)
+	done <- "true u are right"
+}
 
 func main() {
-	a := 1
-
-	f := func() {
-		fmt.Println(a)
-	}
-	a = 2000
-	f()
+	done := make(chan string, 1)
+	go work(done)
+	res := <-done
+	fmt.Println(res)
 }

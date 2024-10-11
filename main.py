@@ -1,7 +1,7 @@
-def f(x):
-    x += 1
+import os
+
+files = os.listdir(".")
 
 
-x = 1
-f(x)
-print(x)
+for file in files:
+    print(file)
